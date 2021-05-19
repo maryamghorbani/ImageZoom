@@ -1,0 +1,1 @@
+vanillaZoom.init('#my-gallery')
