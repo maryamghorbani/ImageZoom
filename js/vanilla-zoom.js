@@ -29,6 +29,24 @@
                 }
             })
 
+            zoomedImage.addEventListener('mouseenter' , function () {
+                this.style.backgroundSize = '250%';
+            })
+            zoomedImage.addEventListener('mousemove', function (e) {
+                let dimensions = this.getBoundingClientRect()
+                let x = e.clientX - dimensions.left
+                let y = e.clientX - dimensions.top
+
+                x = Math.round(100 / (dimensions.width /x));
+                y = Math.round(100 / (dimensions.height /y));
+
+                this.style.backgroundPosition = `${x}%  ${y}%`
+            })
+            zoomedImage.addEventListener('mouseleave' , function () {
+                this.style.backgroundSize = 'cover'
+                this.style.backgroundPosition = 'center'
+            })
+
         }
 
     })
